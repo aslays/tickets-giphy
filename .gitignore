@@ -1,0 +1,39 @@
+# Ignorar node_modules en todas las carpetas
+node_modules/
+
+# Ignorar archivos de entorno
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignorar los archivos de compilación de React
+client/build/
+client/.next/
+client/out/
+
+# Ignorar los archivos de logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignorar directorios de producción
+dist/
+build/
+out/
+
+# Ignorar archivos de configuración de sistemas operativos
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de coverage de pruebas
+coverage/
+
+# Ignorar archivos de configuración de editores de código
+.vscode/
+.idea/
+
+# Ignorar lockfiles si decides usar solo npm o yarn
+package-lock.json
+yarn.lock
