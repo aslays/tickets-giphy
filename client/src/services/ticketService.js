@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3010/api/tickets';
+//const API_URL = 'http://localhost:3010/api/tickets';
+const API_URL = process.env.REACT_APP_API_URL || 'https://tickets-giphy.vercel.app/api/tickets';
+
 
 // Obtener todos los tickets, con filtros opcionales
 export const getTickets = (filters = {}) => {
