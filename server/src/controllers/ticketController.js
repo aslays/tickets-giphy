@@ -1,6 +1,6 @@
 const Ticket = require('../models/Ticket');
 const axios = require('axios');
-const { Op } = require('sequelize');  // Importar los operadores de Sequelize
+const { Op } = require('sequelize');
 require('dotenv').config(); 
 
 // Crear un nuevo ticket
@@ -9,7 +9,7 @@ exports.createTicket = async (req, res) => {
 
   try {
     const getRandomOffset = (max) => {
-      return Math.floor(Math.random() * max);  // Genera un número aleatorio hasta un límite máximo
+      return Math.floor(Math.random() * max);
     };
     
     const gifResponse = await axios.get('https://api.giphy.com/v1/gifs/search', {
@@ -29,7 +29,7 @@ exports.createTicket = async (req, res) => {
       description, 
       difficulty, 
       gifUrl, 
-      status: 'Pending'  // Asegúrate de crear el ticket con un estado inicial
+      status: 'Pending' 
     });
     res.status(201).json(newTicket);
   } catch (error) {
@@ -54,7 +54,7 @@ exports.getAllTickets = async (req, res) => {
 
   if (startDate && endDate) {
     whereConditions.createdAt = {
-      [Op.between]: [new Date(startDate), new Date(endDate)]  // Filtro por fecha de creación
+      [Op.between]: [new Date(startDate), new Date(endDate)]
     };
   }
 
@@ -127,10 +127,10 @@ exports.updateTicketStatus = async (req, res) => {
       return res.status(404).json({ error: 'Ticket no encontrado' });
     }
 
-    ticket.status = status;  // Actualiza el estado del ticket
+    ticket.status = status; 
     await ticket.save();
 
-    res.json(ticket);  // Retorna el ticket actualizado
+    res.json(ticket);
   } catch (error) {
     res.status(500).json({ error: 'Error al actualizar el estado del ticket' });
   }
