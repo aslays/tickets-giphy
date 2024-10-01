@@ -34,19 +34,6 @@ const TicketFilter = ({ onFilter }) => {
             <option value="Hard">Difícil</option>
           </select>
         </div>
-
-        {/* Filtro de Fecha de Inicio
-        <div className="form-group col-md-3">
-          <label htmlFor="startDate">Fecha de inicio</label>
-          <input type="date" className="form-control" id="startDate" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
-        </div>
-
-        
-        <div className="form-group col-md-3">
-          <label htmlFor="endDate">Fecha de fin</label>
-          <input type="date" className="form-control" id="endDate" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
-        </div> */}
-
         
         <div className="col-md-2 d-flex justify-content-center">
           <button className="btn btn-primary mt-2" onClick={handleFilter}>
