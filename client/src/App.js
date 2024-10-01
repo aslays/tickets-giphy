@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import TicketListPage from './components/TicketListPage'; // Aquí está la importación
+import TicketListPage from './components/TicketListPage';
 import TicketForm from './components/TicketForm';
 import { getTickets } from './services/ticketService';
 
@@ -23,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename="/">
       <div className="container">
         <h1 className="text-center my-4">Gestión de Tickets con Giphy</h1>
         <Routes>
