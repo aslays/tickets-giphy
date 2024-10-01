@@ -6,9 +6,16 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: '*',
+}));
 
 app.use(bodyParser.json());
+
+// Endpoint base de prueba
+app.get('/', (req, res) => {
+  res.send('Backend funcionando correctamente');
+});
 
 // Rutas de los tickets
 app.use('/api/tickets', ticketRoutes);
